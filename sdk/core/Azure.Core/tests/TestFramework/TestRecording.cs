@@ -225,7 +225,7 @@ namespace Azure.Core.Testing
 
         public bool IsTrack1SessionRecord()
         {
-            return _session.Entries.Any(item => !string.IsNullOrEmpty(item.EncodedRequestUri));
+            return _session?.Entries?.Any(item => !string.IsNullOrEmpty(item.EncodedRequestUri)) ?? false;
         }
 
         public string GetVariable(string variableName, string defaultValue)
